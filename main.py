@@ -4,6 +4,7 @@ from fastapi import FastAPI
 # Import Activity 2 router
 from week1.activity2.routes import router as task_router
 
+from week1.activity4.streaming import router as streaming_router
 # Create FastAPI application first
 app = FastAPI(
     title="MAF Agent Builder",
@@ -13,7 +14,7 @@ app = FastAPI(
 
 # Register Activity 2 router
 app.include_router(task_router)
-
+app.include_router(streaming_router)
 
 @app.get("/")
 def home():
