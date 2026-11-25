@@ -1,11 +1,19 @@
-  
+
 from fastapi import FastAPI
 
+# Import Activity 2 router
+from week1.activity2.routes import router as task_router
+
+# Create FastAPI application first
 app = FastAPI(
     title="MAF Agent Builder",
-    description="Learning FastAPI for the MAF Agent Builder project",
+    description="Integrated internship learning project",
     version="1.0.0"
 )
+
+# Register Activity 2 router
+app.include_router(task_router)
+
 
 @app.get("/")
 def home():
@@ -14,10 +22,12 @@ def home():
         "status": "Application is running"
     }
 
+
 @app.get("/about")
 def about():
     return {
         "project": "MAF Agent Builder",
         "framework": "FastAPI",
-        "activity": "Week 1 - Activity 1"
+        "week": 1,
+        "activity": 1
     }
