@@ -30,3 +30,4 @@ except Exception as error:
 # Select database and collection
 db = client[DATABASE_NAME]
 sessions_collection = db["sessions"]
+
